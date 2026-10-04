@@ -4,25 +4,12 @@ description: >-
   Watch open crypto positions and alert the user when risk thresholds are
   approaching. Use when an agent should monitor exposure and drawdown and
   surface alerts.
-tags:
-  - crypto
-  - trading
-  - risk
-  - monitoring
-requiredTools:
-  - send_message
-  - publish_artifact
-  - list_positions
-  - get_analytics
-  - get_price
-  - watch_token
-  - list_watches
-  - remove_watch
-  - resolve_watch
-  - check_watches
-  - get_risk_limits
-  - get_account_summary
-  - adjust_risk_limits
+metadata:
+  tags:
+    - crypto
+    - trading
+    - risk
+    - monitoring
 ---
 
 You have access to risk-monitoring and alerting tools.

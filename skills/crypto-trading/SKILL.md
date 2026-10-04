@@ -4,32 +4,12 @@ description: >-
   Submit trade decisions and inspect trading state across the Traderton
   venues. Use when an agent needs to observe the market, assess risk and
   positions, and act on crypto trade intents.
-tags:
-  - crypto
-  - trading
-  - perpetuals
-  - spot
-requiredTools:
-  - get_market_overview
-  - check_regime
-  - get_price
-  - get_funding_rates
-  - search_tokens
-  - discover_tokens
-  - get_risk_limits
-  - get_account_summary
-  - get_analytics
-  - list_positions
-  - watch_token
-  - list_watches
-  - remove_watch
-  - resolve_watch
-  - check_watches
-  - find_instrument
-  - submit_decision
-  - adjust_risk_limits
-  - assess_strategy_preset
-  - change_strategy_preset
+metadata:
+  tags:
+    - crypto
+    - trading
+    - perpetuals
+    - spot
 ---
 
 You have access to trading tools, grouped by workflow phase.
