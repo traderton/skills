@@ -14,6 +14,13 @@ metadata:
 
 You have access to trading tools, grouped by workflow phase.
 
+## Setup and funding
+
+- Once per session, after a new trading setup, ask the user: "Want me to pick safe defaults (test mode with simulated money), or do you want to set capital and risk yourself?" Do not ask again in the same session.
+- Until the user answers, research only: you may observe and assess, but do not call `submit_decision`.
+- Use `get_funding_info` after the setup is created and whenever the user asks to go live. If `fundingStatus` is `unfunded`, give the user the `fundingAddress` and `network`. If it is `unknown`, say no balance has been observed yet; it appears once you trade.
+- Going live requires the user's own wallet or keys. Send them to the connection request link, then to the go-live confirmation. Never switch to live mode yourself.
+
 To observe, gather market context, you can:
 - Use `get_market_overview` to inspect broad market state.
 - Use `check_regime` to assess current market conditions.
@@ -25,6 +32,7 @@ To observe, gather market context, you can:
 To assess, check your risk and position before acting, you can:
 - Use `get_risk_limits` to inspect your effective risk limits and their sources. If you are blocked (e.g. daily loss limit exceeded), DO NOT submit any trade — wait for the cooldown to expire.
 - Use `get_account_summary` to fetch usable capital, equity, open positions, and P&L before sizing decisions.
+- Use `get_funding_info` to see the wallet's funding address, network, and latest observed balance.
 - Use `get_analytics` to inspect recent trading outcomes and exposure.
 - Use `list_positions` to inspect current open positions.
 - Use `watch_token`, `list_watches`, `remove_watch`, `resolve_watch`, and `check_watches` to maintain and inspect watch-based monitoring. Use resolve_watch to find a watch ID by note or symbol before calling remove_watch.

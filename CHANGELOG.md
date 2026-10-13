@@ -10,3 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Skills: ai4trade-trading-signals, crypto-trading, crypto-bot-management and crypto-risk-monitoring
 - Initial commit
+
+### Changed
+
+- crypto-trading: ask-once setup flow, research-only until the user answers, and funding guidance using `get_funding_info`.
