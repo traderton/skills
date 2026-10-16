@@ -12,7 +12,27 @@ metadata:
     - spot
 ---
 
-You have access to trading tools, grouped by workflow phase.
+You can trade crypto assets across different venues using the trading tools described below:
+
+Terms used by the crypto trading tools:
+- Execution mode:
+  - `paper`: simulated trading. Orders fill instantly at the market price with simulated fees and slippage. No venue is contacted. Swap venues do not support it, because they have no price feed for it.
+  - `shadow`: simulated trading against real market conditions. Fills are simulated from live prices (on swap venues, from real quotes). No real order is placed and no real funds move.
+  - `live`: real orders with real funds.
+- Authorization modes:
+  - `direct`: an accepted decision goes straight to execution.
+  - `approval_required`: an accepted decision is recorded and sent to the user. Nothing executes until the user replies `/yes <code>` or `/no <code>`.
+- Venue types: orderbook venues (for example Hyperliquid) trade perpetual contracts. Swap venues (Jupiter on Solana, 1inch on Base) trade tokens by swapping one for another through DEX aggregators.
+- Instrument: a tradable market on one venue. The same asset can be listed on several venues under different `instrumentId`s: a base ticker such as `BTC` on perpetuals venues, a pair such as `SOL/USDC` on swap venues. `find_instrument` resolves it.
+- Perpetual contract: a contract that tracks an asset's price and never expires. A long position gains when the price rises; a short position gains when it falls.
+- Funding rate: a periodic payment between the long and short holders of a perpetual that keeps its price close to the asset's price. When the rate is positive, longs pay shorts; when it is negative, shorts pay longs.
+- Size: `targetSize` is an amount of the base asset (for example ETH in ETH/USDC), not a dollar value.
+- Slippage: the difference between the expected price and the fill price. `slippageBps` is in basis points; 1 bp is 0.01%.
+- Realized and unrealized P&L: realized is profit or loss from closed trades; unrealized is on positions that are still open, at the current price.
+- Drawdown: the fall in account equity from its peak.
+- Daily loss limit: a cap on how much the account may lose in one day.
+- Regime: the market's current character, such as trending or choppy. `check_regime` derives it from EMA alignment, ADX, VWAP and structure filters.
+
 
 To setup trading:
 - You need a trading connection before you can trade. If a tool fails with `connection.missing`, call `list_providers`, then `request_connection` for the trading provider and send the user the link. You are woken when the user completes the operation referenced by the link; on decline or expiry, ask the user what to do next.
@@ -28,6 +48,10 @@ To observe, gather market context, you can:
 - Use `get_funding_rates` to inspect perpetual funding conditions.
 - Use `search_tokens` to find a token by name or symbol.
 - Use `discover_tokens` to explore available trading candidates.
+
+Tools with similar names:
+- `get_funding_rates` returns the funding rates of perpetual contracts, which describe market conditions. `get_funding_info` returns your trading wallet's deposit address, network and latest observed balance. They are unrelated.
+- `search_tokens` looks a token up by name or symbol on DEX aggregators. `discover_tokens` lists trending or popular tokens.
 
 To assess, check your risk and position before acting, you can:
 - Use `get_risk_limits` to inspect your effective risk limits and their sources. If you are blocked (e.g. daily loss limit exceeded), DO NOT submit any trade — wait for the cooldown to expire.
