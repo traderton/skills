@@ -50,7 +50,8 @@ To observe, gather market context, you can:
 
 Tools with similar names:
 - `get_funding_rates` returns the funding rates of perpetual contracts, which describe market conditions. `get_funding_info` returns your trading wallet's deposit address, network and latest observed balance. They are unrelated.
-- `search_tokens` looks a token up by name or symbol on DEX aggregators. `discover_tokens` lists trending or popular tokens.
+- `search_tokens` looks a token up by name or symbol on DEX aggregators. 
+- `discover_tokens` lists trending or popular tokens.
 
 To assess, check your risk and position before acting, you can:
 - Use `get_risk_limits` to inspect your effective risk limits and their sources. If you are blocked (e.g. daily loss limit exceeded), DO NOT submit any trade — wait for the cooldown to expire.
