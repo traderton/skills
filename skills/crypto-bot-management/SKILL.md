@@ -1,14 +1,11 @@
 ---
 name: crypto-bot-management
-description: >-
-  Create, start, stop, and monitor crypto trading bots on the Traderton
-  platform. Use when an agent wants to run, inspect, or reconfigure automated
-  trading bots.
+description: "Create, start, stop, and monitor crypto trading bots on the Traderton platform. Use when an agent wants to run, inspect, or reconfigure automated trading bots."
 metadata:
   tags:
     - crypto
     - trading
-    - bots
+    - bot
     - automation
 ---
 

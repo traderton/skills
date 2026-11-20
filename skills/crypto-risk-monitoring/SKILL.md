@@ -1,15 +1,11 @@
 ---
 name: crypto-risk-monitoring
-description: >-
-  Watch open crypto positions and alert the user when risk thresholds are
-  approaching. Use when an agent should monitor exposure and drawdown and
-  surface alerts.
+description: "Watch open crypto positions and alert the user when risk thresholds are approaching. Use when an agent should monitor exposure and drawdown and surface alerts."
 metadata:
   tags:
     - crypto
     - trading
-    - risk
-    - monitoring
+    - risk monitoring
 ---
 
 You have access to risk-monitoring and alerting tools.

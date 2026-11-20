@@ -1,9 +1,6 @@
 ---
 name: crypto-trading
-description: >-
-  Submit trade decisions and inspect trading state across the Traderton
-  venues. Use when an agent needs to observe the market, assess risk and
-  positions, and act on crypto trade intents.
+description: "Submit trade decisions and inspect trading state across the Traderton venues. Use when an agent needs to observe the market, assess risk and positions, and act on crypto trade intents."
 metadata:
   tags:
     - crypto
