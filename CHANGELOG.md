@@ -13,6 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Initial commit
 
 ### Changed
+- crypto-trading, crypto-risk-monitoring: `get_account_summary` wording now matches what the tool returns. `initialCapital` is the configured allocation, not current funds; size from `equity` or `availableCapital`; figures exclude funding and bot books. `get_analytics` is described as realized-only (no unrealized P&L).
 
 - crypto-trading: added novice communication guidance (plain language with terms explained, money-based risk, at most two questions per message, recommended defaults, numbered choices) and the ordered setup questions.
 - crypto-trading: added definitions of the execution and authorization modes, the terms the tools assume (venue types, instrument, perpetual, funding rate, size, slippage, P&L, drawdown, daily loss limit, regime), and a note on tools with similar names (`get_funding_rates` / `get_funding_info`, `search_tokens` / `discover_tokens`).
