@@ -14,3 +14,4 @@ backend and exposes tools from the backend's signed descriptor.
 | [crypto-trading](skills/crypto-trading/SKILL.md) | Submit trade decisions and inspect trading state. |
 | [crypto-bot-management](skills/crypto-bot-management/SKILL.md) | Create, start, stop, and monitor trading bots. |
 | [crypto-risk-monitoring](skills/crypto-risk-monitoring/SKILL.md) | Watch open positions and alert the user when risk thresholds are approaching. |
+| [crypto-ict-swing-trading](skills/crypto-ict-swing-trading/SKILL.md) | An ICT-style swing approach: daily EMA bias, hourly optimal trade entries, stops and scaling out. Used with crypto-trading. |

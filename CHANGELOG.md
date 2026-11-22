@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ### Added
 
 - Skills: ai4trade-trading-signals, crypto-trading, crypto-bot-management and crypto-risk-monitoring
+- Skills: crypto-ict-swing-trading, merging the former herobids ICT swing playbooks (bullish and bearish) into one direction-symmetric skill
 - Initial commit
 
 ### Changed
